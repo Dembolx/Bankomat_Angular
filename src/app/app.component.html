@@ -1,0 +1,36 @@
+<h2>Bankomat</h2>
+
+<div class="container">
+  <!-- Sekcja 1: Wprowadzenie ilości banknotów -->
+  <div class="section">
+    <h3>Dostępne banknoty</h3>
+    <div *ngFor="let nom of nominals">
+      <label>
+        <img [src]="'assets/' + nom + '.jpg'" [alt]="nom + ' PLN'" />
+        <input type="number" [(ngModel)]="banknoty[nom]" name="{{'b' + nom}}" />
+      </label>
+    </div>
+  </div>
+
+  <!-- Sekcja 2: Wypłata -->
+  <div class="section">
+    <h3>Wypłata</h3>
+    <label>
+      Ile chcesz wypłacić? :
+      <input type="number" [(ngModel)]="wyplata" name="wyplata_input" />
+    </label>
+    <button (click)="Wyplac_Pieniadze()">Wypłać</button>
+    <p *ngIf="brakSrodkow" class="error">Brak środków!</p>
+  </div>
+
+  <!-- Sekcja 3: Wynik wypłaty -->
+  <div class="section">
+    <h3>Wydane banknoty</h3>
+    <div *ngFor="let nom of nominals">
+      <label>
+        <img [src]="'assets/' + nom + '.jpg'" [alt]="nom + ' PLN'" />
+        <span>{{ wynik[nom] || 0 }}</span>
+      </label>
+    </div>
+  </div>
+</div>

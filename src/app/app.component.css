@@ -1,0 +1,205 @@
+/* Resetowanie domyślnych marginesów i paddingu */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Główne nagłówki */
+h2 {
+  font-size: 40px; /* Zwiększenie rozmiaru czcionki */
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+  text-transform: uppercase; /* Zwiększenie wyrazistości tytułu */
+  letter-spacing: 2px; /* Odstęp między literami */
+  border-bottom: 4px solid #28a745; /* Zielona linia pod tytułem */
+  padding-bottom: 10px;
+}
+
+h3 {
+  font-size: 24px; /* Zwiększenie rozmiaru czcionki */
+  color: #28a745; /* Zielony kolor dla podkreślenia */
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase; /* Wyróżnienie tytułów sekcji */
+}
+
+/* Kontener główny */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  max-width: 1400px;
+  width: 100%;
+  padding: 40px;
+  margin: 0 auto;
+}
+
+/* Sekcje */
+.section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.section h3 {
+  font-size: 28px; /* Zwiększenie rozmiaru czcionki */
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Wyśrodkowanie label oraz input */
+label {
+  display: flex;
+  align-items: center;  /* Wyśrodkowanie w pionie */
+  justify-content: center;
+  gap: 30px;  /* Zwiększenie odstępu między obrazkiem a inputem */
+  margin-bottom: 30px;
+  font-size: 18px;
+  padding: 15px;
+}
+
+label img {
+  width: 100px;  /* Powiększenie rozmiaru obrazka */
+  height: auto;
+}
+
+input {
+  width: 120px;  /* Zwiększenie szerokości inputa */
+  padding: 15px;  /* Zwiększenie paddingu */
+  font-size: 18px;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #28a745;
+}
+
+/* Animacje sekcji na hover */
+.section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Kontener dla obrazków */
+.img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+/* Zwiększenie efektu hover na obrazkach */
+img {
+  width: 150px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+/* Wyśrodkowanie inputów */
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 120px;
+  padding: 12px;
+  font-size: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #28a745;
+}
+
+/* Wyśrodkowanie przycisku */
+button {
+  padding: 15px 40px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 0 auto; /* Wyśrodkowanie przycisku */
+  display: block;
+}
+
+button:hover {
+  background-color: #218838;
+  transform: translateY(-5px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Styl dla błędu */
+.error {
+  color: red;
+  font-weight: bold;
+  font-size: 22px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* Kontener dla wyników */
+.wynik-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.wynik-container span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Responsywność */
+@media screen and (max-width: 1200px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
